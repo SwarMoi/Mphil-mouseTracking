@@ -1,0 +1,184 @@
+#### SETUP ####
+
+# Clear environment
+rm(list = ls())
+
+# Install the "mousetrap" package, for mouse tracking data analysis
+install.packages("mousetrap")
+
+# Load package
+library("mousetrap")
+
+#### CREATE MOUSE TRACKING OBJECT FROM DATA FILE ####
+
+# OPEN DATA FILE AND SAVE IT AS DATAFRAME OBJECT "d" (select the "TEST_MT.csv" file in the file browser pop-up)
+  # The file must contain 3 columns that correspond to the x and y successive positions of the mouse and corresponding
+  # time stamps. In each cell, the values are separated by a comma. The separator for column must be different (i.e. semi-colons)
+  # For any given row (i.e. trial), those three cells must contain a list of values of equal length.
+d=read.csv(file.choose(),sep=";", header = T)
+
+# Create mouse tracking object from data frame
+  # indicate the data frame, and which columns in it correspond to the x positions, the y positions,
+  # the time stamps, and the column that serves as identifier for the trial)
+mtdata = mt_import_mousetrap(
+  d,
+  xpos_label = "X",
+  ypos_label = "Y",
+  timestamps_label = "F",
+  mt_id_label = "Trial",
+)
+
+# Observe the mouse tracking object
+  # NA values appear because different trials are not of the same duration. This is solved by time normalization later.
+mtdata
+
+# Plot the trajectories
+  # the TEST_MT.csv file provides data for 6 trials, so 6 trajectories appear
+  # note that during the experiment, participants' mouse start at the bottom of the screen and move up to one of two
+  # answer options situated in the upper corners of the screen. The software used to run the experiment places y = 0
+  # at the top of the screen, so the trajectories are inverted vertically. This is solved by axis reorganization later.
+mt_plot(mtdata)
+
+# This line can group by color different trajectories with an identical value on the column indicated
+# in the "color" argument (can be ignored)
+mt_plot(mtdata, use = "trajectories", use2 = "data", color="Trial")
+
+#### ALIGN AND NORMALIZE TRAJECTORIES ####
+  # To be comparable, each trajectories must have identical starting and ending position and be normalized in space
+  # and time. The following code makes all the necessary adjustments. Plotting after every steps allows to visualize
+  # the adjustments
+
+# Align the starting position of each trajectories
+mtdata <- mt_align_start(
+  mtdata,
+  use = "trajectories",
+  save_as = "trajectories",
+  dimensions = c("xpos", "ypos"),
+  start = c(0,0),
+  verbose = FALSE
+)
+
+# Plot the trajectories (start position aligned)
+mt_plot(mtdata)
+
+# Plot with colors (can be ignored)
+mt_plot(mtdata, use = "trajectories", use2 = "data", color="Trial")
+
+# Space normalize (align start and end positions)
+mtdata = mt_align_start_end(
+  mtdata,
+  use="trajectories",
+  save_as = "sn_trajectories",
+  dimensions=c("xpos","ypos"),
+  start=c(0,0),
+  end=c(-1,1),
+  verbose=FALSE
+)
+
+# Plot the trajectories (with aligned start/end position)
+  # Note that all trajectories now go in the same direction
+mt_plot(mtdata$sn_trajectories)
+
+# Plot with colors (can be ignored)
+mt_plot(mtdata, use = "sn_trajectories", use2 = "data", color = "Trial")
+
+# Time normalize
+  # All trajectories are normalized to be composed of 101 (a default value) time steps of equal size,
+  # thus normalizing trials of different duration in terms of time
+mtdata = mt_time_normalize(
+  mtdata,
+  use="sn_trajectories",
+  save_as = "tn_trajectories",
+  dimensions=c("xpos","ypos"),
+  timestamps="timestamps",
+  nsteps=101,
+  verbose=FALSE
+)
+
+# Reorganize axis (puts the origin at the bottom left)
+mtdata = mt_remap_symmetric(
+  mtdata,
+  use = "tn_trajectories",
+  save_as = "tn_trajectories",
+  dimensions = c("xpos", "ypos"),
+  remap_xpos = "right",
+  remap_ypos = "up"
+)
+
+# Plot trajectories (time normalized)
+mt_plot(mtdata$tn_trajectories)
+
+# Plot with colors (can be ignored)
+mt_plot(mtdata, use = "tn_trajectories", use2 = "data", color = "Trial")
+
+#### CALCULATE DERIVATIVES, MEASURES & DEVIATIONS ####
+# A series of calculations made on the trajectories to provide useful data that are added to the
+# mouse tracking object
+mtdata = mt_derivatives(
+  mtdata,
+  use = "tn_trajectories",
+  save_as = "der_trajectories",
+  dimensions = c("xpos", "ypos"),
+  timestamps = "timestamps",
+  prefix = "",
+  verbose = FALSE
+)
+
+mtdata <- mt_measures(
+  mtdata,
+  use = "der_trajectories",
+  save_as = "measures",
+  flip_threshold = 0,
+  verbose = TRUE
+)
+
+mtdata <- mt_deviations(
+  mtdata,
+  use = "tn_trajectories",
+  save_as = "deviations",
+  #flip_threshold = 0,
+  verbose = TRUE
+)
+
+# Observe the mouse tracking object (now includes the newly calculated measures)
+mtdata
+
+# Includes the following newly calculated measures to the original data frame:
+  # RT : Response Time in "time stamp" units (i.e. frames = ~1/60th of seconds)
+  # MD_above : Maximum Deviation from the straight path between start and end position
+  # AUC : Area Under the Curve (between the trajectory and the straight line from start to end position)
+d = data.frame(d,mt_export_wide(
+  mtdata,
+  use = "measures",
+  use_variables = c("RT","MD_above","AUC")))
+  
+#### STATISTICAL ANALYSIS ####
+# The data for this experiment are yet to be collected. But the statistical analysis should go as follows:
+# A series of linear mixed effect models will be run with each of the mouse tracking measures as dependent variable,
+# experimental condition as predictor, and participant and item as random factors
+
+# Load the package for building Linear Mixed Effect Models object in R
+library("lme4")
+
+# Build the models
+mRT = lmer(RT~Condition + (1|Participant) + (1|Item), data = d)
+mMD = lmer(MD_above~Condition + (1|Participant) + (1|Item), data = d)
+mAUC = lmer(AUC~Condition + (1|Participant) + (1|Item), data = d)
+
+# Observe the models
+summary(mRT)
+summary(mMD)
+summary(mAUC)
+
+# Other predictors may be added to the statistical analysis by building more complex models. For example, the model
+# below adds another hypothetical fixed factor ("Predictor2") to the mAUC model.
+mAUC2 = lmer(AUC~Condition + Predictor2 + (1|Participant) + (1|Item), data = d)
+
+# A model comparison (log likelihood ratio test) can assess if "Predictor2" significantly improves the model's predictions 
+anova(mAUC, mAUC2)
+
+# If significant, a more complex model including the interaction between the two fixed factors can be created
+mAUC2 = lmer(AUC~Condition * Predictor2 + (1|Participant) + (1|Item), data = d)
+
+# another model comparison can assess if the interaction significantly improves the model's predictions
+anova(mAUC2, mAUC3)
