@@ -27,6 +27,7 @@ DIR Structure
 ```
 
 **Experiment** contains both the audio and text stimuli files
+
 **Analysis** contains the following Rmd files
 - 1_Parse_PCI-data.Rmd => Parses PCIbex farm output files to workable csv's
 - 2_Mouse-data-preprocessing-PCIbex.Rmd => Converts xpos and ypos and timeframes to respective columns
