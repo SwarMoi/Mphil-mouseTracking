@@ -1,0 +1,13 @@
+.Tooltip {
+    padding: 10px 10px 1.25em 10px !important;
+    box-shadow: black 0px 0px 5px 0px;
+    font-family: sans;
+    border-radius: 5px;
+    max-width: 300px;
+}
+
+.PennController {
+  max-width: 60vw;
+  margin-left: 50vw;
+  transform: translateX(-50%);
+}

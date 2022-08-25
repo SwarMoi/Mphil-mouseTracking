@@ -1,0 +1,27 @@
+Serial No.,image1,image2,targetlocation,NPTime,audiodur,audiofile,Item,Target,IPA,Condition,DisplayWord1 (same as spoken word),DisplayWord2,Relationship of DisplayWord2 to Spoken Word
+1,1_a.png,1_b.png,1,500,2000,1_match.mp3,1,ഇടത്തേ,iɖat̪ːeː,Match,ഇടത്തേ,കത്രിക,Unrelated
+2,2_a.png,2_b.png,1,500,2000,2_match.mp3,2,അകത്തെ,akat̪ːe,Match,അകത്തെ,വെണ്ണ,Unrelated
+3,3_a.png,3_b.png,1,500,2000,3_match.mp3,3,കത്തി,kat̪ːi,Match,കത്തി,വിരല്,Unrelated
+4,4_a.png,4_b.png,1,500,2000,4_match.mp3,4,മത്തി,mat̪ːi,Match,മത്തി,നാവ്,Unrelated
+5,5_a.png,5_b.png,1,500,2000,5_match.mp3,5,മെത്ത,met̪ːa,Match,മെത്ത,ചെവി,Unrelated
+6,6_a.png,6_b.png,1,500,2000,6_match.mp3,6,ചെത്തി,t͡ʃet̪ːi,Match,ചെത്തി,വിളക്ക്,Unrelated
+7,7_a.png,7_b.png,1,500,2000,7_match.mp3,7,നെത്തൊലി,n̪et̪ːoli,Match,നെത്തൊലി,പെട്ടി,Unrelated
+8,8_a.png,8_b.png,1,500,2000,8_match.mp3,8,ചിത്തത്തേ,t͡ʃit̪ːat̪ːe,Match,ചിത്തത്തേ,ഇഷ്ടിക,Unrelated
+9,9_a.png,9_b.png,1,500,2000,9_match.mp3,9,ഭിത്തി,bʱit̪ːi,Match,ഭിത്തി,മാമ്പഴം,Unrelated
+10,10_a.png,10_b.png,1,500,2000,10_match.mp3,10,ഒത്താശ,ot̪ːaːʃa,Match,ഒത്താശ,തക്കാളി,Unrelated
+11,11_a.png,11_b.png,2,500,2000,11_mismatch.mp3,11,കൊത്തി,kot̪ːi,Mismatch_Source,കൊട്ടി,കൊത്തി,Source word from which cross-splicing was done to create the spoken word
+12,12_a.png,12_b.png,2,500,2000,12_mismatch1.mp3,12,മുത്തി,mut̪ːi,Mismatch_Source,മുട്ടി,മുത്തി,Source word from which cross-splicing was done to create the spoken word
+13,13_a.png,13_b.png,2,500,2000,13_mismatch1.mp3,13,മറ്റേ,maṯːeː,Mismatch_Source,മട്ടേ,മറ്റേ,Source word from which cross-splicing was done to create the spoken word
+14,14_a.png,14_b.png,2,500,2000,14_mismatch1.mp3,14,മറ്റെങ്ങോ,maṯːeŋŋoː,Mismatch_Source,മട്ടെങ്ങോ,മറ്റെങ്ങോ,Source word from which cross-splicing was done to create the spoken word
+15,15_a.png,15_b.png,2,500,2000,15_mismatch.mp3,15,പിറ്റെന്നു,piṯːen̪n̪ə,Mismatch_Source,പിട്ടെന്നു,പിറ്റെന്നു,Source word from which cross-splicing was done to create the spoken word
+16,16_a.png,16_b.png,2,500,2000,16_mismatch1.mp3,16,തീറ്റി,t̪i:ṯːi,Mismatch_Source,തീട്ടി,തീറ്റി,Source word from which cross-splicing was done to create the spoken word
+17,17_a.png,17_b.png,2,500,2000,17_mismatch1.mp3,17,ഒറ്റാൽ,oṯːaːl,Mismatch_Source,ഒട്ടാൽ,ഒറ്റാൽ,Source word from which cross-splicing was done to create the spoken word
+18,18_a.png,18_b.png,2,500,2000,18_mismatch.mp3,18,പൊറ്റെക്കാട്ട്,poṯːekkaːʈːə,Mismatch_Source,പൊട്ടെക്കാട്ട്,പൊറ്റെക്കാട്ട്,Source word from which cross-splicing was done to create the spoken word
+19,19_a.png,19_b.png,2,500,2000,19_mismatch.mp3,19,കുറ്റിക്കാട്,kuṯːika:ɖə,Mismatch_Source,കുത്തിക്കാട്,കുറ്റിക്കാട്,Source word from which cross-splicing was done to create the spoken word
+20,20_a.png,20_b.png,2,500,2000,20_mismatch.mp3,20,മട്ടാ,maʈːaː,Mismatch_Source,മറ്റാ,മട്ടാ,Source word from which cross-splicing was done to create the spoken word
+21,21_a.png,21_b.png,1,500,2000,21_mismatch1.mp3,21,പട്ടി,paʈːi,Mismatch_noSource,പത്തി,പണം,Phonological cohort of the spoken word
+22,22_a.png,22_b.png,1,500,2000,22_mismatch.mp3,22,പെട്ടി,peʈːi,Mismatch_noSource,പെത്തി,പെൺ,Phonological cohort of the spoken word
+23,23_a.png,23_b.png,1,500,2000,23_mismatch.mp3,23,വിട്ടു,ʋiʈːu,Mismatch_noSource,വിറ്റു,വില്ല്,Phonological cohort of the spoken word
+24,24_a.png,24_b.png,1,500,2000,24_mismatch1.mp3,24,കൊട്ട,koʈːaː,Mismatch_noSource,കൊത്ത,കൊല,Phonological cohort of the spoken word
+25,25_a.png,25_b.png,1,500,2000,25_mismatch.mp3,25,ഒട്ടി,oʈːi,Mismatch_noSource,ഒത്തി,ഒന്ന്,Phonological cohort of the spoken word
+26,26_a.png,26_b.png,1,500,2000,26_mismatch1.mp3,26,കുട്ടി,kuʈːi,Mismatch_noSource,കുത്തി,കുന്തം,Phonological cohort of the spoken word
