@@ -2,15 +2,16 @@
 
 DIR Structure
 
+```
 |-- README.md
 |-- Analysis
 |   |-- data
 |   |-- output
 |   |-- raw
-|   `-- 1_Parse_PCI-data.Rmd
-|   `-- 2_Mouse-data-preprocessing-PCIbex.Rmd
-|   `-- 3_Mouse-tracking-analysis.Rmd
-|   `-- references.txt
+|   -- 1_Parse_PCI-data.Rmd
+|   -- 2_Mouse-data-preprocessing-PCIbex.Rmd
+|   -- 3_Mouse-tracking-analysis.Rmd
+|   -- references.txt
 |-- Experiment
 |    |-- PCIbex-Farm
 |    |   |-- chunk_includes
@@ -22,8 +23,9 @@ DIR Structure
 |    |-- stimuli
 |    |   |-- audio_64kbps
 |    |   |-- stimuli-images
-|    |   `-- items.csv
+|    |   -- items.csv
 
+```
 
 **Experiment** contains both the audio and text stimuli files
 **Analysis** contains the following Rmd files
