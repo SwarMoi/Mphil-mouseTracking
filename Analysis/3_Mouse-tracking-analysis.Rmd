@@ -2,7 +2,7 @@
 title: "Mouse-tracking-analysis"
 output: html_document
 date: "2022-08-12"
-author: Swarnendu Moitra
+author: "Swarnendu Moitra, Indranil Dutta"
 ---
 
 ```{r setup, include=FALSE}
