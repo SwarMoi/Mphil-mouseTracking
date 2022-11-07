@@ -41,7 +41,7 @@ e=read.csv(file.choose(), header = T)
     NA values appear because different trials are not of the same duration. This is solved by time normalization later.
 ```{r}
 library(dplyr)
-d <- d %>% rename(Trial = Trial)
+d <- d %>% rename(Trial = "Condition")
 d <- filter(d, Parameter == "Move")
 ```
 
@@ -53,7 +53,7 @@ mtdata = mt_import_mousetrap(
   xpos_label = "xpos",
   ypos_label = "ypos",
   timestamps_label = "timestamps",
-  mt_id_label = "Trial",
+  mt_id_label = "X",
 )
 
 View(mtdata)

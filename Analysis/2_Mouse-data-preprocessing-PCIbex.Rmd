@@ -90,8 +90,8 @@ results$xpos <-str_replace_all(results$xpos, " ", "")
 results$ypos <-str_replace_all(results$xpos, " ", "")
 results$Timestamps <-str_replace_all(results$Timestamps, " ", "")
 
-results <- results %>% select(X,xpos,ypos,Timestamps)
-output <- merge (x = rawfile, y = results, by = "X", all.x = TRUE)
+#results <- results %>% select(X,xpos,ypos,Timestamps)
+#output <- merge (x = rawfile, y = results, by = "X", all.x = TRUE)
 ```
 
 

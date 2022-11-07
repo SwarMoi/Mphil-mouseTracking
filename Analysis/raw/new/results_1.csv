@@ -1,0 +1,45 @@
+#
+# Results on Wed, 13 Jul 2022 11:26:42 GMT
+# USER AGENT: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36
+# Design number was non-random = 0
+#
+# Columns below this comment are as follows:
+# 1. Results reception time.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Order number of item.
+# 5. Inner element number.
+# 6. Label.
+# 7. Latin Square Group.
+# 8. PennElementType.
+# 9. PennElementName.
+# 10. Parameter.
+# 11. Value.
+# 12. EventTime.
+# 13. Comments.
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,1,0,consent,NULL,PennController,0,_Trial_,Start,1657711536056,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,1,0,consent,NULL,PennController,0,_Trial_,End,1657711536908,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,2,0,intro,NULL,PennController,1,_Trial_,Start,1657711536921,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,2,0,intro,NULL,PennController,1,_Trial_,End,1657711581842,NULL
+# 13. id.
+# 14. Target.
+# 15. NPTime.
+# 16. audiodur.
+# 17. EarlyStartMessage.
+# 18. TooSlowMessage.
+# 19. Comments.
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,5,0,experiment,NULL,PennController,5,_Trial_,Start,1657711581850,id,1,967,1967,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,5,0,experiment,NULL,MouseTracker,mouse,Click,958:517,1657711586205,id,1,967,1967,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,5,0,experiment,NULL,MouseTracker,mouse,Move,x958y517w1920h1080t1784+0-1t16+0+0t734+0-1t16+0+0t17+0-1t17-1-1t149-1-1t17-6-7t17-4-4t17-6-6t16-12-14t17-33-35t17-34-36t17-38-44t16-32-40t17-39-46t17-20-23t16-20-23t17-21-21t16-18-27t17-27-35t17-23-26t17-39-38t15-17-13t17-13-7t17-11-5t17-5-1t16-5-1t17-6+0t16-5+0t18-3+0t33+0+5t17+0+10t16+1+7t16+1+6t18+2+6t16+3+6t17+5+8t17+2+2t16+1+3t17+2+1t16+1+2t17+1+1t17+1+1t67+2+5t15+1+4t17+1+2t17+0+1t16+1+1t18+0+1t83+0+0,1657711586198,id,1,967,1967,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,5,0,experiment,NULL,Selector,unnamed-Selector,Selection,1,1657711589881,id,1,967,1967,false,false,1;2;3;4
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,5,0,experiment,NULL,PennController,5,_Trial_,End,1657711589891,id,1,967,1967,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,4,0,experiment,NULL,PennController,4,_Trial_,Start,1657711589896,id,3,755,1970,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,4,0,experiment,NULL,MouseTracker,mouse,Click,959:523,1657711593013,id,3,755,1970,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,4,0,experiment,NULL,MouseTracker,mouse,Move,x959y523w1920h1080t2372+3-10t16+7-16t16+4-21t17+1-20t17+2-21t17+1-15t16+0-8t17+0-10t16+0-10t18+0-7t16+1-10t17+1-6t17+3-8t15+2-7t18+2-7t16+3-9t17+3-8t17+4-9t16+5-11t17+9-18t16+9-17t17+10-14t17+6-10t16+6-8t18+5-8t16+4-5t16+4-6t17+3-7t17+2-4t16+0-3t17+1-3t17+2-3t17+1-5t17+2-2t16+0-1t16+1-1t16+1-1t17+2-3t17+4-4t17+5-5t16+6-5t18+3-3t16+2-2t16+1+0,1657711593009,id,3,755,1970,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,4,0,experiment,NULL,Selector,unnamed-Selector,Selection,3,1657711596221,id,3,755,1970,false,false,1;2;3;4
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,4,0,experiment,NULL,PennController,4,_Trial_,End,1657711596229,id,3,755,1970,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,3,0,experiment,NULL,PennController,3,_Trial_,Start,1657711596237,id,1,1011,2317,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,3,0,experiment,NULL,MouseTracker,mouse,Click,959:526,1657711599023,id,1,1011,2317,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,3,0,experiment,NULL,MouseTracker,mouse,Move,x959y526w1920h1080t2460+0-2t18-1-12t16-7-14t17-11-17t17-23-40t16-16-24t17-18-27t17-25-32t16-21-21t17-16-17t17-23-24t16-14-15t17-17-15t16-18-18t17-17-17t17-28-22t16-29-20t18-33-19t17-43-18t16-53-17t16-36-14t17-22-14t17-18-15t16-5-4t17-1+0t33-1+0t267+1+0t17+2+2t14+1+1,1657711599018,id,1,1011,2317,false,false,NULL
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,3,0,experiment,NULL,Selector,unnamed-Selector,Selection,1,1657711602306,id,1,1011,2317,false,false,1;2;3;4
+1657711602,b366ada8539dc80bf58e51326effa325,PennController,3,0,experiment,NULL,PennController,3,_Trial_,End,1657711602314,id,1,1011,2317,false,false,NULL
